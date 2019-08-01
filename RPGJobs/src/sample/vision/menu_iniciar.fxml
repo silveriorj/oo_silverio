@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.control.Menu_Iniciar">
+    <ImageView fitHeight="625.0" fitWidth="750.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../img/menu.gif" />
+    </ImageView>
+    <BorderPane id="title" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0" prefWidth="750.0" stylesheets="@../dark.css">
+        <top>
+          <Label id="title" fx:id="title" alignment="CENTER" prefHeight="84.0" prefWidth="720.0" text="RPGJOBS" textFill="#a4ab1b" BorderPane.alignment="CENTER">
+              <font>
+                  <Font name="Baskerville Old Face" size="12.0" />
+              </font>
+          </Label>
+        </top>
+        <bottom>
+            <VBox prefHeight="60.0" prefWidth="750.0" BorderPane.alignment="CENTER">
+                <HBox alignment="BOTTOM_CENTER" opacity="0.8" prefHeight="46.0" prefWidth="750.0">
+                    <effect>
+                        <SepiaTone />
+                    </effect>
+                    <Button minWidth="-Infinity" mnemonicParsing="false" prefHeight="33.0" prefWidth="138.0" text="TUTORIAL" />
+                    <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="171.0" text="CARREGAR" />
+                    <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="204.0" text="INICIAR" />
+                    <Button minWidth="-Infinity" mnemonicParsing="false" prefHeight="33.0" prefWidth="140.0" text="CREDITOS" />
+                    <Button mnemonicParsing="false" onAction="#actionSair" prefHeight="33.0" prefWidth="148.0" text="SAIR" />
+                </HBox>
+                <Label alignment="CENTER_RIGHT" prefHeight="16.0" prefWidth="750.0" text="Developed by Silvério ® " />
+            </VBox>
+        </bottom>
+    </BorderPane>
+</Pane>

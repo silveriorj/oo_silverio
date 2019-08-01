@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<DialogPane prefHeight="220.0" prefWidth="486.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.abertura_os">
+   <header>
+      <VBox prefHeight="74.0" prefWidth="500.0">
+         <Separator prefHeight="26.0" prefWidth="500.0">
+            <VBox.margin>
+               <Insets left="4.0" right="5.0" top="2.0" />
+            </VBox.margin>
+         </Separator>
+         <HBox alignment="TOP_CENTER" prefHeight="57.0" prefWidth="500.0">
+            <opaqueInsets>
+               <Insets bottom="15.0" />
+            </opaqueInsets>
+            <Separator orientation="VERTICAL" prefHeight="72.0" prefWidth="0.0">
+               <HBox.margin>
+                  <Insets left="2.0" />
+               </HBox.margin>
+            </Separator>
+            <ImageView fitHeight="62.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets left="15.0" top="10.0" />
+               </HBox.margin>
+            </ImageView>
+            <Label alignment="CENTER" prefHeight="72.0" prefWidth="330.0" text="Ordem de Serviço">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="25.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </Label>
+            <JFXTextField alignment="CENTER" disable="true" editable="false" prefHeight="26.0" prefWidth="103.0" promptText="Protocolo">
+               <HBox.margin>
+                  <Insets right="5.0" top="5.0" />
+               </HBox.margin>
+            </JFXTextField>
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+         </HBox>
+      </VBox>
+   </header>
+   <graphic>
+
+   </graphic>
+   <content>
+      <VBox prefHeight="359.0" prefWidth="486.0">
+         <padding>
+            <Insets left="15.0" right="15.0" />
+         </padding>
+         <Separator prefHeight="0.0" prefWidth="494.0">
+            <VBox.margin>
+               <Insets left="-18.0" right="-15.0" />
+            </VBox.margin>
+         </Separator>
+         <HBox alignment="CENTER_RIGHT" prefHeight="28.0" prefWidth="456.0">
+            <JFXTextField fx:id="tfID" onKeyPressed="#seleciona_cliente" prefHeight="25.0" prefWidth="85.0" promptText="ID do Cliente">
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="tfCliente" prefHeight="29.0" prefWidth="357.0" promptText="Nome completo do Solicitante">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+         </HBox>
+         <HBox prefHeight="13.0" prefWidth="470.0">
+            <VBox.margin>
+               <Insets top="15.0" />
+            </VBox.margin>
+            <JFXTextField fx:id="tfDataHoje" alignment="CENTER_RIGHT" editable="false" prefHeight="25.0" prefWidth="144.0" promptText="Aberto em:   dd/mm/YYYY" />
+            <Label prefHeight="25.0" prefWidth="120.0" text="Previsão de entrega:">
+               <HBox.margin>
+                  <Insets left="25.0" />
+               </HBox.margin>
+            </Label>
+            <JFXDatePicker fx:id="dpDataPrev" defaultColor="#002d8fcd" prefHeight="25.0" prefWidth="168.0" />
+         </HBox>
+         <JFXTextArea fx:id="taDesc" prefHeight="101.0" prefWidth="456.0" promptText="Descrição do serviço solicitado.">
+            <VBox.margin>
+               <Insets top="15.0" />
+            </VBox.margin>
+         </JFXTextArea>
+      </VBox>
+   </content>
+</DialogPane>

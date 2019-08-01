@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<AnchorPane prefHeight="560.0" prefWidth="944.0" stylesheets="@../style/dark.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.administrador_controller">
+    <TabPane prefHeight="560" prefWidth="981.0" tabClosingPolicy="UNAVAILABLE">
+        <Tab id="TAB" text="Manter Usuários">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="367.0" prefWidth="705.0">
+                <BorderPane prefHeight="521.0" prefWidth="981.0">
+                    <left>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="439.0" prefWidth="370.0" spacing="10">
+                            <padding>
+                                <Insets bottom="25" left="25" right="25" top="25" />
+                            </padding>
+                            <ListView fx:id="ltvwUser" onMouseClicked="#actionShowUserDetails" prefHeight="306.0" prefWidth="277.0" />
+                            <HBox alignment="BOTTOM_RIGHT" prefHeight="43.0" prefWidth="248.0" spacing="10">
+                                <Label text="Usuários: " />
+                                <JFXButton minHeight="-Infinity" minWidth="-Infinity" onAction="#addFuncionario">
+                                    <graphic>
+                                        <ImageView fitHeight="18.0" fitWidth="18.0">
+                                            <Image url="@../style/img/add.png" />
+                                        </ImageView>
+                                    </graphic>
+                                </JFXButton>
+                                <JFXButton onAction="#deleteFuncionario">
+                                    <graphic>
+                                        <ImageView fitHeight="18.0" fitWidth="18.0">
+                                            <Image url="@../style/img/delete.png" />
+                                        </ImageView>
+                                    </graphic>
+                                </JFXButton>
+                            </HBox>
+                        </VBox>
+                    </left>
+                    <right>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="355.0" prefWidth="578.0" spacing="10">
+                            <padding>
+                                <Insets bottom="25" left="25" right="25" top="25" />
+                            </padding>
+                            <HBox prefHeight="100.0" prefWidth="337.0">
+                                <VBox prefHeight="185.0" prefWidth="446.0">
+                                    <HBox prefHeight="37.0" prefWidth="318.0">
+                                        <Label prefHeight="26.0" prefWidth="70.0" text="Nome: " />
+                                        <TextField fx:id="tfNome" prefHeight="37.0" prefWidth="376.0" />
+                                    </HBox>
+                                    <HBox prefHeight="26.0" prefWidth="251.0">
+                                        <Label prefHeight="26.0" prefWidth="70.0" text="Email:" />
+                                        <TextField fx:id="tfEmail" prefHeight="37.0" prefWidth="376.0" />
+                                    </HBox>
+                                    <HBox prefHeight="27.0" prefWidth="251.0">
+                                        <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="24.0" prefWidth="70.0" text="Login:" />
+                                        <TextField fx:id="tfUsuario" prefHeight="37.0" prefWidth="376.0" />
+                                    </HBox>
+                                    <HBox prefHeight="12.0" prefWidth="251.0">
+                                        <Label prefHeight="25.0" prefWidth="70.0" text="Senha: " />
+                                        <TextField fx:id="tfSenha" prefHeight="37.0" prefWidth="377.0" />
+                                    </HBox>
+                                    <HBox prefHeight="12.0" prefWidth="251.0">
+                                        <Label prefHeight="25.0" prefWidth="70.0" text="Tipo:" />
+                                        <TextField fx:id="tfTipo" prefHeight="37.0" prefWidth="47.0" />
+                                    </HBox>
+                                </VBox>
+                                <ImageView fitHeight="84.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                    <Image url="@../style/img/users.png" />
+                                </ImageView>
+                            </HBox>
+                            <HBox prefHeight="38.0" prefWidth="351.0">
+                                <Button alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onMouseClicked="#actionUpdateUsers" prefHeight="38.0" prefWidth="618.0" text="Atualizar " textAlignment="RIGHT">
+                                    <graphic>
+                                        <ImageView fitHeight="18.0" fitWidth="18.0">
+                                            <Image url="@../style/img/update.png" />
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </HBox>
+                        </VBox>
+                    </right>
+                    <top>
+                        <HBox prefHeight="26.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+                            <MenuBar prefHeight="35.0" prefWidth="985.0">
+                                <Menu mnemonicParsing="true" text="_Funcionários">
+                                    <MenuItem accelerator="Shortcut+Shift+F" mnemonicParsing="true" onAction="#addFuncionario" text="_Adicionar..." />
+                                </Menu>
+                            </MenuBar>
+                        </HBox>
+                    </top>
+                    <bottom>
+                        <ToolBar prefHeight="54.0" prefWidth="720.0" BorderPane.alignment="CENTER">
+                            <Button alignment="BOTTOM_LEFT" onAction="#actionExit" prefHeight="33.0" prefWidth="100.0" text="Logout" />
+                        </ToolBar>
+                    </bottom>
+                    <center>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" BorderPane.alignment="CENTER" />
+                    </center>
+                </BorderPane>
+            </AnchorPane>
+        </Tab>
+        <Tab id="TAB" text="Ordens de Serviço">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            <BorderPane prefHeight="541.0" prefWidth="981.0">
+                <left>
+                    <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="351.0" prefWidth="293.0" spacing="10">
+                        <padding>
+                            <Insets bottom="25" left="25" right="25" top="25" />
+                        </padding>
+                        <ListView fx:id="ltvwOs" onMouseClicked="#detailsOS" prefHeight="297.0" prefWidth="248.0" />
+                        <HBox alignment="BOTTOM_RIGHT" prefHeight="43.0" prefWidth="248.0" spacing="10">
+                            <Label fx:id="contadorOS" prefHeight="21.0" prefWidth="92.0" text="Abertas:" />
+                            <Button minHeight="-Infinity" minWidth="-Infinity" onAction="#addOS">
+                                <graphic>
+                                    <ImageView fitHeight="18.0" fitWidth="18.0">
+                                        <Image url="@../style/img/add.png" />
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+                            <Button id="btDelete">
+                                <graphic>
+                                    <ImageView fitHeight="18.0" fitWidth="18.0">
+                                        <Image url="@../style/img/delete.png" />
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+                        </HBox>
+                    </VBox>
+                </left>
+                <right>
+                    <VBox alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="422.0" prefWidth="559.0" spacing="10">
+                        <padding>
+                            <Insets bottom="25" left="25" right="25" top="25" />
+                        </padding>
+                        <HBox prefHeight="185.0" prefWidth="407.0">
+                            <VBox prefHeight="222.0" prefWidth="414.0">
+                                <HBox prefHeight="37.0" prefWidth="318.0">
+                                    <Label prefHeight="26.0" prefWidth="95.0" text="Protocolo:" />
+                                    <TextField fx:id="tfProtocolo" prefHeight="37.0" prefWidth="308.0" />
+                                </HBox>
+                                <HBox prefHeight="37.0" prefWidth="346.0">
+                                    <Label prefHeight="26.0" prefWidth="95.0" text="Cliente:" />
+                                    <TextField fx:id="tfCliente" prefHeight="37.0" prefWidth="308.0" />
+                                </HBox>
+                                <HBox prefHeight="26.0" prefWidth="251.0">
+                                    <Label prefHeight="26.0" prefWidth="95.0" text="Atribuição:" />
+                                    <TextField fx:id="tfFunc" prefHeight="37.0" prefWidth="308.0" />
+                                </HBox>
+                                <HBox prefHeight="27.0" prefWidth="251.0">
+                                    <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="24.0" prefWidth="95.0" text="Aberta em:" />
+                                    <TextField fx:id="tfDataIn" prefHeight="37.0" prefWidth="308.0" />
+                                </HBox>
+                                <HBox prefHeight="12.0" prefWidth="251.0">
+                                    <Label prefHeight="25.0" prefWidth="95.0" text="Prazo:" />
+                                    <TextField fx:id="tfPrazo" prefHeight="37.0" prefWidth="308.0" />
+                                </HBox>
+                                <HBox prefHeight="12.0" prefWidth="251.0">
+                                    <Label prefHeight="25.0" prefWidth="95.0" text="Finalização:" />
+                                    <TextField fx:id="tfDataOut" prefHeight="37.0" prefWidth="308.0" />
+                                </HBox>
+                            </VBox>
+                            <ImageView fitHeight="155.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true">
+                                <Image url="@../style/img/users.png" />
+                            </ImageView>
+                        </HBox>
+                        <TextArea fx:id="txDescricao" prefHeight="200.0" prefWidth="200.0" />
+                        <HBox prefHeight="38.0" prefWidth="351.0">
+                            <Button alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="33.0" prefWidth="513.0" text="Atualizar " textAlignment="RIGHT">
+                                <graphic>
+                                    <ImageView fitHeight="18.0" fitWidth="18.0">
+                                        <Image url="@../style/img/update.png" />
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+                        </HBox>
+                    </VBox>
+                </right>
+                <top>
+                    <HBox prefHeight="26.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+                        <MenuBar prefHeight="35.0" prefWidth="981.0">
+                            <Menu mnemonicParsing="true" text="_Ordens de Serviço">
+                                <MenuItem accelerator="Shortcut+Shift+F" mnemonicParsing="true" text="_Adicionar..." />
+                            </Menu>
+                        </MenuBar>
+                    </HBox>
+                </top>
+                <bottom>
+                    <ToolBar prefHeight="69.0" prefWidth="981.0" BorderPane.alignment="CENTER">
+                        <Button alignment="BOTTOM_LEFT" onAction="#actionExit" prefHeight="33.0" prefWidth="100.0" text="Logout" />
+                    </ToolBar>
+                </bottom>
+                <center>
+                    <Separator orientation="VERTICAL" prefHeight="445.0" prefWidth="7.0" BorderPane.alignment="CENTER" />
+                </center>
+            </BorderPane>
+        </Tab>
+        <Tab id="TAB" text="Clientes Cadastrados">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="367.0" prefWidth="705.0">
+                <BorderPane prefHeight="560.0" prefWidth="1015.0">
+                    <left>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="483.0" prefWidth="431.0" spacing="10">
+                            <padding>
+                                <Insets bottom="25" left="25" right="25" top="25" />
+                            </padding>
+
+                            <TextField />
+                            <ListView fx:id="ltvwCliente" onMouseClicked="#actionShowClienteDetails" prefHeight="280.0" prefWidth="243.0" />
+                            <HBox alignment="BOTTOM_RIGHT" prefHeight="43.0" prefWidth="248.0" spacing="10">
+                                <Label id="contadorC" text="Clientes: " />
+                                <Button minHeight="-Infinity" minWidth="-Infinity" onAction="#addCliente">
+                                    <graphic>
+                                        <ImageView fitHeight="18.0" fitWidth="18.0">
+                                            <Image url="@../style/img/add.png" />
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button onAction="#deleteFuncionario">
+                                    <graphic>
+                                        <ImageView fitHeight="18.0" fitWidth="18.0">
+                                            <Image url="@../style/img/delete.png" />
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </HBox>
+                        </VBox>
+                    </left>
+                    <right>
+                        <VBox disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="355.0" prefWidth="544.0" spacing="10">
+                            <padding>
+                                <Insets bottom="25" left="25" right="25" top="25" />
+                            </padding>
+                            <HBox prefHeight="100.0" prefWidth="337.0">
+                                <VBox prefHeight="222.0" prefWidth="454.0">
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="251.0">
+                              <children>
+                                           <JFXTextField fx:id="tfGarra" alignment="CENTER" prefHeight="37.0" prefWidth="79.0" promptText="Garra">
+                                    <HBox.margin>
+                                       <Insets bottom="10.0" />
+                                    </HBox.margin></JFXTextField>
+                              </children></HBox>
+                                     <JFXTextField fx:id="tfNomeCliente" prefHeight="37.0" prefWidth="474.0" promptText="Nome Completo" />
+                                     <JFXTextField fx:id="tfEmailCliente" prefHeight="37.0" prefWidth="465.0" promptText="Endereço de Email">
+                              <VBox.margin>
+                                 <Insets bottom="10.0" top="10.0" />
+                              </VBox.margin>
+                           </JFXTextField>
+                                    <HBox layoutX="10.0" layoutY="121.0" prefHeight="37.0" prefWidth="459.0">
+                                        <JFXTextField fx:id="tfFixo" prefHeight="37.0" prefWidth="140.0" promptText="Telefone Fixo" />
+                                        <JFXTextField fx:id="tfMovel" prefHeight="37.0" prefWidth="145.0" promptText="Telefone Celular">
+                                 <HBox.margin>
+                                    <Insets left="15.0" />
+                                 </HBox.margin></JFXTextField>
+                                    </HBox>
+                                    <HBox prefHeight="37.0" prefWidth="459.0">
+                                        <JFXTextField fx:id="tfRua" prefHeight="37.0" prefWidth="325.0" promptText="Rua">
+                                 <HBox.margin>
+                                    <Insets top="10.0" />
+                                 </HBox.margin></JFXTextField>
+                                        <JFXTextField fx:id="tfNumero" alignment="CENTER" prefHeight="37.0" prefWidth="117.0" promptText="Número">
+                                 <HBox.margin>
+                                    <Insets left="15.0" top="10.0" />
+                                 </HBox.margin></JFXTextField>
+                                    </HBox>
+                                     <JFXTextField fx:id="tfComplemento" prefHeight="37.0" prefWidth="510.0" promptText="Complemento">
+                              <VBox.margin>
+                                 <Insets top="10.0" />
+                              </VBox.margin>
+                           </JFXTextField>
+                                    <HBox prefHeight="12.0" prefWidth="251.0">
+                                        <Label prefHeight="25.0" prefWidth="56.0" />
+                                        <JFXTextField fx:id="tfBairro" prefHeight="37.0" prefWidth="306.0" promptText="Balneário">
+                                 <HBox.margin>
+                                    <Insets right="15.0" top="10.0" />
+                                 </HBox.margin></JFXTextField>
+                                        <JFXTextField fx:id="tfCidade" prefHeight="37.0" prefWidth="249.0" promptText="Cidade">
+                                 <HBox.margin>
+                                    <Insets top="10.0" />
+                                 </HBox.margin></JFXTextField>
+                                    </HBox>
+                                </VBox>
+                            </HBox>
+                            <HBox prefHeight="38.0" prefWidth="351.0">
+                                <JFXButton disable="false" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onMouseClicked="#actionUpdateUsers" prefHeight="35.0" prefWidth="457.0" text="Atualizar " textAlignment="RIGHT">
+                                    <graphic>
+                                        <ImageView fitHeight="18.0" fitWidth="18.0">
+                                            <Image url="@../style/img/update.png" />
+                                        </ImageView>
+                                    </graphic>
+                                </JFXButton>
+                            </HBox>
+                        </VBox>
+                    </right>
+                    <top>
+                        <HBox prefHeight="26.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+                            <MenuBar prefHeight="35.0" prefWidth="982.0">
+                                <Menu mnemonicParsing="true" text="_Clientes">
+                                    <MenuItem accelerator="Shortcut+Shift+F" mnemonicParsing="true" onAction="#addFuncionario" text="_Adicionar..." />
+                                </Menu>
+                            </MenuBar>
+                        </HBox>
+                    </top>
+                    <center>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" BorderPane.alignment="CENTER" />
+                    </center>
+                </BorderPane>
+            </AnchorPane>
+        </Tab>
+    </TabPane>
+</AnchorPane>

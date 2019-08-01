@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<DialogPane prefHeight="394.0" prefWidth="479.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.cadastro_clientes">
+   <header>
+      <Label fx:id="lbGarra" alignment="CENTER_RIGHT" text="ID: ">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font></Label>
+   </header>
+   <content>
+      <VBox id="cadastro_template" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="359.0" prefWidth="482.0">
+         <Label alignment="CENTER" minHeight="-Infinity" prefHeight="35.0" prefWidth="461.0" text="Dados do Cliente">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font></Label>
+         <TextField fx:id="tfNome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="350.0" promptText="Nome Completo*">
+            <padding>
+               <Insets bottom="10.0" top="10.0" />
+            </padding>
+            <VBox.margin>
+               <Insets bottom="10.0" top="10.0" />
+            </VBox.margin></TextField>
+         <TextField fx:id="tfEmail" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="350.0" promptText="E-mail *">
+            <padding>
+               <Insets bottom="10.0" top="10.0" />
+            </padding>
+            <VBox.margin>
+               <Insets bottom="20.0" />
+            </VBox.margin></TextField>
+         <Label alignment="CENTER" prefHeight="36.0" prefWidth="482.0" text="Contato">
+            <VBox.margin>
+               <Insets bottom="5.0" />
+            </VBox.margin>
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font></Label>
+         <HBox prefHeight="30.0" prefWidth="200.0">
+            <Label prefHeight="30.0" prefWidth="59.0" text="FIXO:" />
+            <TextField fx:id="tfFone" minHeight="-Infinity" prefHeight="30.0" prefWidth="157.0" promptText="(00) 0000-0000" />
+            <Label prefHeight="30.0" prefWidth="63.0" text="    Celular:" />
+            <TextField fx:id="tfCel" minHeight="-Infinity" prefHeight="30.0" prefWidth="128.0" promptText="(00) 00000-0000" />
+         </HBox>
+         <Label alignment="CENTER" minHeight="-Infinity" prefHeight="42.0" prefWidth="465.0" text="Endereço">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font>
+         </Label>
+         <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight ="30.0" prefWidth="358.0">
+            <TextField fx:id="tfRua" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" prefWidth="385.0" promptText="Rua *" />
+            <TextField fx:id="tfNum" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="69.0" promptText="Nº *">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin></TextField>
+         </HBox>
+         <TextField fx:id="tfComplemento" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="459.0" promptText="Complemento">
+            <VBox.margin>
+               <Insets bottom="5.0" right="3.0" top="5.0" />
+            </VBox.margin>
+         </TextField>
+         <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="460.0">
+            <TextField fx:id="tfBairro" minHeight="-Infinity" prefHeight="30.0" prefWidth="278.0" promptText="Balneário *">
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin></TextField>
+            <TextField fx:id="tfCidade" minHeight="-Infinity" prefHeight="30.0" prefWidth="202.0" promptText="Município *" />
+            <VBox.margin>
+               <Insets right="2.0" />
+            </VBox.margin>
+         </HBox>
+      </VBox>
+   </content>
+</DialogPane>
