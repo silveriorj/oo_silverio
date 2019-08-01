@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<DialogPane prefHeight="233.0" prefWidth="339.0" stylesheets="@../dark.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controle.cadastro_dialog">
+
+<content>
+    <GridPane hgap="10" vgap="10">
+        <Label text="Time 01" GridPane.rowIndex="1" />
+        <TextField fx:id="tfTime1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Label text="Time 02" GridPane.rowIndex="2" />
+        <TextField fx:id="tfTime2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <Label text="Data Jogo" GridPane.rowIndex="4" />
+        <DatePicker fx:id="dpJogo" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+         <columnConstraints>
+            <ColumnConstraints maxWidth="87.0" minWidth="73.0" prefWidth="80.0" />
+            <ColumnConstraints maxWidth="226.0" minWidth="212.0" prefWidth="219.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+    </GridPane>
+</content>
+   <header>
+      <VBox prefHeight="49.0" prefWidth="339.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="16.0" prefWidth="320.0" text="Cadastro de Partidas" />
+         </children>
+      </VBox>
+   </header>
+
+
+
+</DialogPane>

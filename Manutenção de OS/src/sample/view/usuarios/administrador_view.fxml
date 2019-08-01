@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.ToggleButton?>
+<AnchorPane prefHeight="560.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.f_administrador_controller">
+    <TabPane prefHeight="560.0" prefWidth="980.0" tabClosingPolicy="UNAVAILABLE">
+        <Tab text="Manter Funcionarios">
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+                <top>
+                    <ToolBar maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                             prefHeight="42.0" prefWidth="981.0" BorderPane.alignment="CENTER">
+                        <contextMenu>
+                            <ContextMenu>
+                                <items>
+                                    <MenuItem mnemonicParsing="false" text="A"/>
+                                </items>
+                            </ContextMenu>
+                        </contextMenu>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="967.0">
+                            <Button alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false"
+                                    onAction="#logoff" prefHeight="28.0" prefWidth="120.0" text="Logoff">
+                                <graphic>
+                                    <ImageView fitHeight="18.0" fitWidth="29.0" pickOnBounds="true"
+                                               preserveRatio="true">
+                                        <Image url="@../../style/img/logoff.png"/>
+                                    </ImageView>
+                                </graphic>
+                                <BorderPane.margin>
+                                    <Insets/>
+                                </BorderPane.margin>
+                            </Button>
+                        </HBox>
+                    </ToolBar>
+                </top>
+                <left>
+                    <VBox alignment="TOP_RIGHT" prefHeight="491.0" prefWidth="479.0" BorderPane.alignment="CENTER">
+                        <BorderPane.margin>
+                            <Insets left="5.0"/>
+                        </BorderPane.margin>
+                        <TextField prefHeight="50.0" prefWidth="474.0">
+                            <VBox.margin>
+                                <Insets bottom="20.0" left="5.0" top="10.0"/>
+                            </VBox.margin>
+                        </TextField>
+                        <ScrollPane prefHeight="392.0" prefWidth="479.0">
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="375.0" prefWidth="476.0">
+                                <TableView fx:id="tbFuncionario" layoutX="6.0" layoutY="-2.0"
+                                           onMouseClicked="#DETALHES_FUNCIONARIO" prefHeight="375.0" prefWidth="455.0">
+                                    <columns>
+                                        <TableColumn fx:id="tbIDColuna" prefWidth="83.0" text="ID"/>
+                                        <TableColumn fx:id="tbFuncColuna" prefWidth="346.0" text="FUNCIONARIO"/>
+                                    </columns>
+                                </TableView>
+                            </AnchorPane>
+                        </ScrollPane>
+                        <Button contentDisplay="RIGHT" mnemonicParsing="false" onAction="#ADICIONA_FUNCIONARIO"
+                                prefHeight="29.0" prefWidth="179.0" text="Incluir Funcionario">
+                            <VBox.margin>
+                                <Insets bottom="10.0" top="15.0"/>
+                            </VBox.margin>
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="19.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                    <Image url="@../../style/img/user_add.png"/>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </VBox>
+                </left>
+                <right>
+                    <VBox alignment="TOP_RIGHT" prefHeight="491.0" prefWidth="401.0" BorderPane.alignment="CENTER">
+                        <BorderPane.margin>
+                            <Insets right="10.0"/>
+                        </BorderPane.margin>
+                        <VBox alignment="TOP_RIGHT" prefHeight="257.0" prefWidth="401.0">
+                            <Label alignment="BOTTOM_CENTER" prefHeight="37.0" prefWidth="401.0" text="Dados Pessoais">
+                                <VBox.margin>
+                                    <Insets bottom="5.0"/>
+                                </VBox.margin>
+                            </Label>
+                            <TextField fx:id="tfid" alignment="CENTER" editable="false" maxHeight="-Infinity"
+                                       maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0"
+                                       prefWidth="83.0" promptText="ID"/>
+                            <HBox prefHeight="24.0" prefWidth="401.0">
+                                <VBox.margin>
+                                    <Insets bottom="10.0" top="10.0"/>
+                                </VBox.margin>
+                                <TextField fx:id="tfNome" editable="false" prefHeight="26.0" prefWidth="416.0"
+                                           promptText="Nome Completo"/>
+                            </HBox>
+                            <HBox prefHeight="14.0" prefWidth="401.0">
+                                <TextField fx:id="tfEmail" editable="false" prefHeight="26.0" prefWidth="443.0"
+                                           promptText="Endereço de e-mail"/>
+                            </HBox>
+                            <TextField fx:id="tfUsuario" promptText="Usuario de Login">
+                                <VBox.margin>
+                                    <Insets top="10.0"/>
+                                </VBox.margin>
+                            </TextField>
+                            <TextField fx:id="tfSenha" promptText="Senha de Login">
+                                <VBox.margin>
+                                    <Insets top="10.0"/>
+                                </VBox.margin>
+                            </TextField>
+                            <TextField fx:id="tfTipo" promptText="Funcao do Funcionario">
+                                <VBox.margin>
+                                    <Insets top="10.0"/>
+                                </VBox.margin>
+                            </TextField>
+                        </VBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="401.0">
+                            <VBox.margin>
+                                <Insets top="20.0"/>
+                            </VBox.margin>
+                            <ToggleButton fx:id="btUpdate" onAction="#ALTERA_FUNCIONARIO" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="32.0"
+                                          prefWidth="195.0" text="Editar Cadastro">
+                                <graphic>
+                                    <ImageView fitHeight="24.0" fitWidth="31.0" pickOnBounds="true"
+                                               preserveRatio="true">
+                                        <Image url="@../../style/img/editar.png"/>
+                                    </ImageView>
+                                </graphic>
+                            </ToggleButton>
+                            <Button contentDisplay="RIGHT" mnemonicParsing="false" onAction="#DELETE_FUNCIONARIO"
+                                    prefHeight="32.0" prefWidth="195.0" text="Remover Cadastro">
+                                <graphic>
+                                    <ImageView fitHeight="18.0" fitWidth="29.0" pickOnBounds="true"
+                                               preserveRatio="true">
+                                        <Image url="@../../style/img/user_remove.png"/>
+                                    </ImageView>
+                                </graphic>
+                                <HBox.margin>
+                                    <Insets left="15.0"/>
+                                </HBox.margin>
+                            </Button>
+                        </HBox>
+                    </VBox>
+                </right>
+            </BorderPane>
+        </Tab>
+        <Tab text="Manter Clientes">
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+                <top>
+                    <ToolBar minWidth="-Infinity" prefHeight="42.0" prefWidth="982.0" BorderPane.alignment="CENTER">
+                        <contextMenu>
+                            <ContextMenu>
+                                <items>
+                                    <MenuItem mnemonicParsing="false" text="A" />
+                                </items>
+                            </ContextMenu>
+                        </contextMenu>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="967.0">
+                            <Button alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#logoff" prefHeight="28.0" prefWidth="120.0" text="Logoff">
+                                <graphic>
+                                    <ImageView fitHeight="18.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                        <Image url="@../../style/img/logoff.png" />
+                                    </ImageView>
+                                </graphic>
+                                <BorderPane.margin>
+                                    <Insets />
+                                </BorderPane.margin>
+                        <HBox.margin>
+                           <Insets right="5.0" />
+                        </HBox.margin>
+                            </Button>
+                        </HBox>
+                    </ToolBar>
+                </top>
+                <left>
+                    <VBox alignment="TOP_RIGHT" prefHeight="491.0" prefWidth="479.0" BorderPane.alignment="CENTER">
+                        <BorderPane.margin>
+                            <Insets left="5.0" />
+                        </BorderPane.margin>
+                        <TextField prefHeight="50.0" prefWidth="474.0">
+                            <VBox.margin>
+                                <Insets bottom="20.0" left="5.0" top="10.0" />
+                            </VBox.margin>
+                        </TextField>
+                        <ScrollPane prefHeight="392.0" prefWidth="479.0">
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="375.0" prefWidth="600.0">
+                                <TableView fx:id="tbCliente" layoutX="6.0" layoutY="-2.0" onMouseClicked="#DETALHES_CLIENTE" prefHeight="375.0" prefWidth="455.0">
+                                    <columns>
+                                        <TableColumn fx:id="tbIDCol" prefWidth="124.0" text="Garra" />
+                                        <TableColumn fx:id="tbNomeCol" prefWidth="274.0" text="Cliente" />
+                                        <TableColumn fx:id="tbEnderecoCol" prefWidth="192.0" text="Data Prevista" />
+                                    </columns>
+                                </TableView>
+                            </AnchorPane>
+                        </ScrollPane>
+                        <Button contentDisplay="RIGHT" mnemonicParsing="false" onAction="#ADICIONA_CLIENTE" prefHeight="29.0" prefWidth="152.0" text="Incluir cliente">
+                            <VBox.margin>
+                                <Insets bottom="10.0" top="15.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="19.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                    <Image url="@../../style/img/user_add.png"/>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </VBox>
+                </left>
+                <right>
+                    <VBox alignment="TOP_RIGHT" prefHeight="491.0" prefWidth="401.0" BorderPane.alignment="CENTER">
+                        <BorderPane.margin>
+                            <Insets right="10.0" />
+                        </BorderPane.margin>
+                        <VBox alignment="TOP_RIGHT" prefHeight="257.0" prefWidth="401.0">
+                            <Label alignment="BOTTOM_CENTER" prefHeight="37.0" prefWidth="401.0" text="Dados Pessoais">
+                                <VBox.margin>
+                                    <Insets bottom="5.0" />
+                                </VBox.margin>
+                            </Label>
+                            <TextField fx:id="tfGarra" alignment="CENTER" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="83.0" promptText="GARRA" />
+                            <HBox prefHeight="24.0" prefWidth="401.0">
+                                <VBox.margin>
+                                    <Insets bottom="10.0" top="10.0" />
+                                </VBox.margin>
+                                <TextField fx:id="tfNomeCliente" editable="false" prefHeight="25.0" prefWidth="270.0" promptText="Nome Completo" />
+                                <TextField fx:id="tfFixo" alignment="CENTER" editable="false" promptText="Telefone Fixo">
+                                    <HBox.margin>
+                                        <Insets left="5.0" />
+                                    </HBox.margin>
+                                </TextField>
+                            </HBox>
+                            <HBox prefHeight="14.0" prefWidth="401.0">
+                                <TextField fx:id="tfEmailCliente" editable="false" prefHeight="25.0" prefWidth="270.0" promptText="Endereço de e-mail" />
+                                <TextField fx:id="tfMovel" alignment="CENTER" editable="false" promptText="Telefone Móvel">
+                                    <HBox.margin>
+                                        <Insets left="5.0" />
+                                    </HBox.margin>
+                                </TextField>
+                            </HBox>
+                            <Label alignment="CENTER" prefHeight="17.0" prefWidth="454.0" text="Endereço do Cliente">
+                                <VBox.margin>
+                                    <Insets bottom="10.0" top="10.0" />
+                                </VBox.margin>
+                            </Label>
+                            <HBox prefHeight="24.0" prefWidth="401.0">
+                                <TextField fx:id="tfRua" editable="false" prefHeight="25.0" prefWidth="321.0" promptText="Rua" />
+                                <TextField fx:id="tfNumero" alignment="CENTER" editable="false" prefHeight="25.0" prefWidth="70.0" promptText="Número">
+                                    <HBox.margin>
+                                        <Insets left="10.0" />
+                                    </HBox.margin>
+                                </TextField>
+                            </HBox>
+                            <TextField fx:id="tfComplemento" editable="false" promptText="Complemento">
+                                <VBox.margin>
+                                    <Insets top="5.0" />
+                                </VBox.margin>
+                            </TextField>
+                            <HBox prefHeight="12.0" prefWidth="401.0">
+                                <VBox.margin>
+                                    <Insets top="5.0" />
+                                </VBox.margin>
+                                <TextField fx:id="tfBairro" editable="false" prefHeight="25.0" prefWidth="239.0" promptText="Balneário">
+                                    <HBox.margin>
+                                        <Insets right="10.0" />
+                                    </HBox.margin>
+                                </TextField>
+                                <TextField fx:id="tfCidade" editable="false" prefHeight="25.0" prefWidth="153.0" promptText="Cidade" />
+                            </HBox>
+                        </VBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="401.0">
+                            <VBox.margin>
+                                <Insets top="20.0" />
+                            </VBox.margin>
+                            <Button alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="32.0" prefWidth="195.0" text="Editar Cadastro">
+                                <graphic>
+                                    <ImageView fitHeight="24.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                        <Image url="@../../style/img/editar.png" />
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+                            <Button contentDisplay="RIGHT" mnemonicParsing="false" onAction="#DELETE_CLIENTE" prefHeight="32.0" prefWidth="195.0" text="Remover Cadastro">
+                                <graphic>
+                                    <ImageView fitHeight="18.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                        <Image url="@../../style/img/user_remove.png" />
+                                    </ImageView>
+                                </graphic>
+                                <HBox.margin>
+                                    <Insets left="15.0" />
+                                </HBox.margin>
+                            </Button>
+                        </HBox>
+                    </VBox>
+                </right>
+            </BorderPane>
+        </Tab>
+        <Tab text="Ordens de Manutencao">
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+                <top>
+                    <ToolBar minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="982.0" BorderPane.alignment="CENTER">
+                        <contextMenu>
+                            <ContextMenu>
+                                <items>
+                                    <MenuItem mnemonicParsing="false" text="A" />
+                                </items>
+                            </ContextMenu>
+                        </contextMenu>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="28.0" prefWidth="967.0">
+                            <Button alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#logoff" prefHeight="28.0" prefWidth="140.0" text="Logoff">
+                                <graphic>
+                                    <ImageView fitHeight="18.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                        <Image url="@../../style/img/logoff.png" />
+                                    </ImageView>
+                                </graphic>
+                                <BorderPane.margin>
+                                    <Insets />
+                                </BorderPane.margin>
+                        <HBox.margin>
+                           <Insets right="5.0" />
+                        </HBox.margin>
+                            </Button>
+                        </HBox>
+                    </ToolBar>
+                </top>
+                <left>
+                    <VBox alignment="TOP_RIGHT" prefHeight="468.0" prefWidth="479.0" BorderPane.alignment="CENTER">
+                        <BorderPane.margin>
+                            <Insets left="5.0" />
+                        </BorderPane.margin>
+                        <TextField prefHeight="30.0" prefWidth="474.0">
+                            <VBox.margin>
+                                <Insets bottom="20.0" left="5.0" top="10.0" />
+                            </VBox.margin>
+                        </TextField>
+                        <TableView fx:id="tbOS" onMouseClicked="#DETALHES_OS" prefHeight="375.0" prefWidth="455.0">
+                            <columns>
+                                <TableColumn fx:id="tbProtocoloCol1" prefWidth="90.0" text="Protocolo" />
+                                <TableColumn fx:id="tbDescCol1" prefWidth="374.0" text="Descrição" />
+                            </columns>
+                            <VBox.margin>
+                                <Insets left="5.0" />
+                            </VBox.margin>
+                        </TableView>
+                        <Button contentDisplay="RIGHT" mnemonicParsing="false" onAction="#ADICIONA_OS" prefHeight="34.0" prefWidth="184.0" text="Abrir Nova O.S  ">
+                            <VBox.margin>
+                                <Insets left="5.0" top="15.0" />
+                            </VBox.margin>
+                            <graphic>
+                                <ImageView fitHeight="24.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                    <Image url="@../../style/img/os_finaliza.png" />
+                                </ImageView>
+                            </graphic>
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+                    </VBox>
+                </left>
+                <right>
+                    <VBox alignment="TOP_RIGHT" prefHeight="491.0" prefWidth="403.0" BorderPane.alignment="CENTER">
+                        <BorderPane.margin>
+                            <Insets right="10.0" />
+                        </BorderPane.margin>
+                        <VBox alignment="TOP_RIGHT" prefHeight="319.0" prefWidth="418.0">
+                            <Label alignment="BOTTOM_CENTER" prefHeight="37.0" prefWidth="401.0" text="Ordem de Serviço">
+                                <VBox.margin>
+                                    <Insets bottom="5.0" top="10.0" />
+                                </VBox.margin>
+                            </Label>
+                            <TextField fx:id="tfProtocol" alignment="CENTER" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="83.0" promptText="Protocolo" />
+                            <TextField fx:id="tfClient" editable="false" promptText="Solicitante:">
+                                <VBox.margin>
+                                    <Insets top="10.0" />
+                                </VBox.margin>
+                            </TextField>
+                            <HBox prefHeight="24.0" prefWidth="401.0">
+                                <VBox.margin>
+                                    <Insets bottom="10.0" top="10.0" />
+                                </VBox.margin>
+                                <JFXTextArea fx:id="tfDescription" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="403.0" promptText="Descrição do problema" />
+                            </HBox>
+                            <HBox prefHeight="14.0" prefWidth="401.0">
+                                <TextField fx:id="tfDateOpening" editable="false" prefHeight="25.0" prefWidth="200.0" promptText="Data de abertura:" />
+                                <TextField fx:id="tfDateEnding" editable="false" prefHeight="25.0" prefWidth="200.0" promptText="Data de finalização:">
+                                    <HBox.margin>
+                                        <Insets left="5.0" />
+                                    </HBox.margin>
+                                </TextField>
+                            </HBox>
+                            <JFXTextField fx:id="cbTecnic" editable="false" prefHeight="25.0" prefWidth="421.0" promptText="Técnico responsável:">
+                                <VBox.margin>
+                                    <Insets top="10.0" />
+                                </VBox.margin>
+                            </JFXTextField>
+                            <Label alignment="CENTER" prefHeight="17.0" prefWidth="454.0" text="Endereço do Cliente">
+                                <VBox.margin>
+                                    <Insets bottom="10.0" top="10.0" />
+                                </VBox.margin>
+                            </Label>
+                            <HBox prefHeight="24.0" prefWidth="401.0">
+                                <TextField fx:id="tfRuaCliente" editable="false" prefHeight="25.0" prefWidth="321.0" promptText="Rua" />
+                                <TextField fx:id="tfNumeroCliente" alignment="CENTER" editable="false" prefHeight="25.0" prefWidth="70.0" promptText="Número">
+                                    <HBox.margin>
+                                        <Insets left="10.0" />
+                                    </HBox.margin>
+                                </TextField>
+                            </HBox>
+                            <TextField fx:id="tfComplCliente" editable="false" promptText="Complemento">
+                                <VBox.margin>
+                                    <Insets top="5.0" />
+                                </VBox.margin>
+                            </TextField>
+                            <HBox prefHeight="12.0" prefWidth="401.0">
+                                <VBox.margin>
+                                    <Insets top="5.0" />
+                                </VBox.margin>
+                                <TextField fx:id="tfBairroCliente" editable="false" prefHeight="25.0" prefWidth="239.0" promptText="Balneário">
+                                    <HBox.margin>
+                                        <Insets right="10.0" />
+                                    </HBox.margin>
+                                </TextField>
+                                <TextField fx:id="tfCidadeCliente" editable="false" prefHeight="25.0" prefWidth="153.0" promptText="Cidade" />
+                            </HBox>
+                        </VBox>
+                        <TextArea fx:id="taConsiders" editable="false" prefHeight="78.0" prefWidth="403.0" promptText="Considerações finais:">
+                            <VBox.margin>
+                                <Insets top="5.0" />
+                            </VBox.margin>
+                        </TextArea>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="401.0">
+                            <VBox.margin>
+                                <Insets bottom="10.0" top="15.0" />
+                            </VBox.margin>
+                            <Button alignment="CENTER" contentDisplay="RIGHT" onAction="#ALTERA_OS" mnemonicParsing="false" prefHeight="32.0" prefWidth="143.0" text="Alterar dados">
+                                <graphic>
+                                    <ImageView fitHeight="24.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                        <Image url="@../../style/img/editar.png" />
+                                    </ImageView>
+                                </graphic>
+                                <HBox.margin>
+                                    <Insets right="15.0" />
+                                </HBox.margin>
+                        <font>
+                           <Font name="FreeSans" size="12.0" />
+                        </font>
+                            </Button>
+                            <Button contentDisplay="RIGHT" mnemonicParsing="false" onAction="#ATRIBUIR_TECNICO" prefHeight="32.0" prefWidth="176.0" text="Atribuir Funcionário">
+                                <HBox.margin>
+                                    <Insets right="15.0" />
+                                </HBox.margin>
+                                <graphic>
+                                    <ImageView fitHeight="22.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                                        <Image url="@../../style/img/users.png" />
+                                    </ImageView>
+                                </graphic>
+                        <font>
+                           <Font name="FreeSans" size="12.0" />
+                        </font>
+                            </Button>
+                            <Button contentDisplay="RIGHT" mnemonicParsing="false" onAction="#DELETE_OS" prefHeight="32.0" prefWidth="135.0" text="Cancelar OS">
+                                <HBox.margin>
+                                    <Insets />
+                                </HBox.margin>
+                                <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                        <Image url="@../../style/img/os_cancela.png" />
+                                    </ImageView>
+                                </graphic>
+                        <font>
+                           <Font name="FreeSans" size="12.0" />
+                        </font>
+                            </Button>
+                        </HBox>
+                    </VBox>
+                </right>
+            </BorderPane>
+        </Tab>
+    </TabPane>
+</AnchorPane>

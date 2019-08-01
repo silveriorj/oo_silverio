@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.PasswordField?>
+<DialogPane fx:controller="sample.controle.cadastro_dialog"
+            xmlns:fx="http://javafx.com/fxml">
+
+    <content>
+        <GridPane vgap="10" hgap="10">
+            <Label text="Nome:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="tfnome" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <Label  text="Usuário:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="tfUser" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            <Label  text="Senha:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <PasswordField fx:id="pfPass" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        </GridPane>
+    </content>
+
+
+
+</DialogPane>

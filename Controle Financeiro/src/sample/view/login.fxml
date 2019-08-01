@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane onKeyPressed="#pegaTecla" fx:id="telaLogin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="450.0" stylesheets="@../style/dark.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.control.login">
+   <children>
+      <VBox layoutX="112.0" layoutY="56.0" prefHeight="138.0" prefWidth="226.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="19.0" prefWidth="234.0" text="Usuario" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <TextField fx:id="tfUser" />
+            <Label alignment="CENTER" prefHeight="19.0" prefWidth="230.0" text="Senha" textAlignment="CENTER">
+               <font>
+                  <Font name="DejaVu Serif Bold" size="13.0" />
+               </font></Label>
+            <PasswordField fx:id="tfSenha" />
+            <Separator prefHeight="10.0" prefWidth="206.0" />
+            <HBox prefHeight="26.0" prefWidth="170.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#Entrar" prefHeight="33.0" prefWidth="115.0" text="Entrar" />
+                  <Button mnemonicParsing="false" onAction="#Registrar" prefHeight="33.0" prefWidth="115.0" text="Cadastrar" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Label alignment="CENTER_RIGHT" layoutY="226.0" prefHeight="21.0" prefWidth="450.0" text="Developed by Raul Silvério ® ">
+         <font>
+            <Font name="Constantia Italic" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

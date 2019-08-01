@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane hgap="10" prefHeight="170.0" prefWidth="400.0" stylesheets="@../dark.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controle.janela_apostas">
+
+    <HBox alignment="center" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="2">
+
+        <padding>
+            <Insets bottom="10" left="10" right="10" top="10" />
+        </padding>
+
+        <VBox alignment="TOP_RIGHT" spacing="10">
+            <Label fx:id="lbTimeA" alignment="CENTER" prefHeight="19.0" prefWidth="190.0" />
+            <TextField fx:id="tfGolA" alignment="CENTER" />
+        </VBox>
+
+        <Label alignment="BASELINE_LEFT" contentDisplay="CENTER" prefHeight="69.0" prefWidth="0.0" text="x">
+         <padding>
+            <Insets top="25.0" />
+         </padding></Label>
+
+        <VBox alignment="TOP_RIGHT" spacing="10">
+            <Label fx:id="lbTimeB" alignment="CENTER" prefHeight="19.0" prefWidth="191.0" />
+            <TextField fx:id="tfGolB" alignment="CENTER" />
+        </VBox>
+    </HBox>
+   <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">
+      <children>
+
+           <Label alignment="CENTER" prefHeight="21.0" prefWidth="402.0" text="Time Vencedor" />
+         <Label fx:id="lbVencedor" alignment="CENTER" prefHeight="21.0" prefWidth="404.0" />
+      </children>
+   </VBox>
+
+    <Label fx:id="lbData" alignment="CENTER" prefHeight="21.0" prefWidth="125.0" GridPane.rowIndex="6" />
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints maxHeight="62.0" minHeight="50.0" prefHeight="62.0" />
+      <RowConstraints maxHeight="12.0" minHeight="0.0" prefHeight="0.0" />
+      <RowConstraints maxHeight="12.0" minHeight="0.0" prefHeight="0.0" />
+      <RowConstraints maxHeight="12.0" minHeight="0.0" prefHeight="0.0" />
+   </rowConstraints>
+
+</GridPane>

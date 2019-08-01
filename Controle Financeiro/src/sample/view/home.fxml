@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="600.0" prefWidth="985.0"
+            stylesheets="@../style/dark.css"
+            xmlns="http://javafx.com/javafx/8.0.121"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="sample.control.Home">
+    <TabPane layoutY="14.0"
+             prefHeight="645.0" prefWidth="1080.0"
+             tabClosingPolicy="UNAVAILABLE">
+        <Tab id="TAB" text="HOME">
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+                <top>
+                    <HBox prefHeight="17.0" prefWidth="1067.0" BorderPane.alignment="CENTER">
+                        <MenuBar prefHeight="35.0" prefWidth="920.0">
+                            <Menu mnemonicParsing="false" text="Logout">
+                                <MenuItem mnemonicParsing="false" onAction="#actionExit" text="Close" />
+                            </Menu>
+                        </MenuBar>
+                        <Label id="USER" fx:id="lbUser" contentDisplay="RIGHT" prefHeight="35.0" prefWidth="181.0" text="USUÁRIO:  " />
+                    </HBox>
+                </top>
+                <center>
+                    <PieChart fx:id="grafoPizza" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" BorderPane.alignment="CENTER" />
+                </center>
+            <left>
+            </left>
+            <left>
+            </left>
+            <left>
+               <PieChart fx:id="grafoFrequencia" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" BorderPane.alignment="CENTER" />
+            </left>
+            <right>
+               <PieChart fx:id="grafoSubCategoria" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" BorderPane.alignment="CENTER" />
+            </right>
+            </BorderPane>
+        </Tab>
+        <Tab id="TAB" text="GASTOS">
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+            <top>
+                <HBox alignment="CENTER_LEFT" prefHeight="53.0" prefWidth="1080.0" BorderPane.alignment="CENTER">
+                    <Label prefHeight="21.0" prefWidth="13.0" />
+                    <TextField fx:id="tfValor" prefHeight="37.0" prefWidth="137.0" />
+                    <Label text="  Para: " />
+                    <DatePicker fx:id="dpDataLancamento" prefHeight="37.0" prefWidth="141.0" />
+                    <Label prefHeight="66.0" prefWidth="26.0" text=" " />
+                    <ComboBox fx:id="cbCategoria" onAction="#atualizaCombo" prefWidth="150.0" promptText="Categoria..." />
+                    <Label prefHeight="21.0" prefWidth="15.0" />
+                    <ComboBox fx:id="cbSubCategoria" prefHeight="25.0" prefWidth="197.0" promptText="Sub-Categoria" />
+                    <Separator orientation="VERTICAL" prefHeight="53.0" prefWidth="17.0" />
+                    <Button mnemonicParsing="false" onAction="#add" prefHeight="33.0" prefWidth="129.0" text="REGISTRAR" />
+                </HBox>
+            </top>
+            <right>
+                <VBox prefHeight="535.0" prefWidth="238.0" BorderPane.alignment="CENTER">
+                    <VBox prefHeight="200.0" prefWidth="100.0">
+                        <TextField fx:id="fxRegistroCateg" prefHeight="37.0" prefWidth="210.0" />
+                        <Button contentDisplay="CENTER"
+                                mnemonicParsing="false"
+                                onAction="#addCategoria"
+                                prefHeight="33.0" prefWidth="242.0"
+                                text="REGISTRAR CATEGORIA" />
+                        <Label prefHeight="25.0" prefWidth="234.0" />
+                        <Button mnemonicParsing="false"
+                                onAction="#addSubCategoria"
+                                prefHeight="33.0" prefWidth="276.0"
+                                text="REGISTRAR SUB-CATEGORIA" />
+                    </VBox>
+                  <Label alignment="CENTER"
+                         prefHeight="40.0" prefWidth="241.0"
+                         text="Total de Gastos" />
+                  <Label fx:id="tfTotal" alignment="CENTER" prefHeight="21.0" prefWidth="239.0" text="R$" />
+                  <Label alignment="CENTER" prefHeight="52.0" prefWidth="238.0" text="Gastos Pendentes" />
+                  <Label fx:id="tfPendencias" alignment="CENTER" prefHeight="21.0" prefWidth="314.0" text="R$" />
+                    <Button alignment="CENTER" mnemonicParsing="false" onAction="#limpaTransacao" prefHeight="33.0" prefWidth="234.0" text="ZERA" />
+                </VBox>
+            </right>
+            <left>
+               <TableView fx:id="tabela"
+                          editable="true"
+                          onMouseClicked="#updateStatus"
+                          prefHeight="535.0" prefWidth="791.0"
+                          BorderPane.alignment="CENTER">
+                 <columns>
+                     <TableColumn fx:id="colCateg" prefWidth="171.0" text="CATEGORIA" />
+                     <TableColumn fx:id="colTrans" prefWidth="182.99998474121094" text="TRANSAÇÃO" />
+                     <TableColumn fx:id="colSubCat" prefWidth="230.0" text="SUB-CATEGORIA" />
+                     <TableColumn fx:id="colData" prefWidth="82.0" text="Data" />
+                     <TableColumn fx:id="colStatus" prefWidth="98.0" text="Status" />
+                 </columns>
+               </TableView>
+            </left>
+            <bottom>
+               <Separator prefHeight="16.0" prefWidth="1080.0" BorderPane.alignment="CENTER" />
+            </bottom>
+            <center>
+               <Button onAction="#alteraStatus"
+                       mnemonicParsing="false"
+                       prefHeight="549.0" prefWidth="58.0"
+                       text="ALTERAR        STATUS"
+                       wrapText="true"
+                       BorderPane.alignment="CENTER" />
+            </center>
+            </BorderPane>
+        </Tab>
+        <Tab id="TAB" text="LISTAR">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <BorderPane layoutY="6.0" prefHeight="606.0" prefWidth="1080.0">
+                    <top>
+                        <HBox prefHeight="38.0" prefWidth="1080.0" BorderPane.alignment="CENTER">
+                            <Label prefHeight="38.0" prefWidth="261.0" />
+                     <ComboBox fx:id="cbSearchCategoria" prefHeight="31.0" prefWidth="245.0" />
+                     <Button mnemonicParsing="false" onAction="#list_by_categ" prefHeight="23.0" prefWidth="184.0" text="LISTAR CATEGORIA" />
+                     <Separator orientation="VERTICAL" prefHeight="38.0" prefWidth="79.0" />
+                            <DatePicker fx:id="dpDataPesq" prefHeight="37.0" prefWidth="187.0" />
+                            <Button mnemonicParsing="false" onAction="#populaListBy" prefHeight="38.0" prefWidth="123.0" text="LISTAR" />
+                        </HBox>
+                    </top>
+                    <left>
+                        <TableView fx:id="tabelaLis" prefHeight="546.0" prefWidth="688.0" BorderPane.alignment="CENTER">
+                            <columns>
+                                <TableColumn fx:id="catCol" prefWidth="151.00001525878906" text="Categoria" />
+                                <TableColumn fx:id="valorCol" prefWidth="106.0" text="Valor" />
+                                <TableColumn fx:id="subcatCol" prefWidth="189.0" text="Sub-Categoria" />
+                                <TableColumn fx:id="dataCol" prefWidth="102.0" text="DATA" />
+                                <TableColumn fx:id="statusCol" prefWidth="133.0" text="STATUS" />
+                            </columns>
+                        </TableView>
+                    </left>
+               <right>
+                   <VBox prefHeight="550.0" prefWidth="308.0" BorderPane.alignment="CENTER">
+                       <Label alignment="CENTER" prefHeight="65.0" prefWidth="308.0" text="LISTAR POR PERÍODO"/>
+                       <Label alignment="CENTER" prefHeight="50.0" prefWidth="308.0" text="DE:"/>
+                       <DatePicker fx:id="dpDataIni" prefHeight="37.0" prefWidth="317.0"/>
+                       <Label alignment="CENTER" prefHeight="50.0" prefWidth="308.0" text="ATÉ:"/>
+                       <DatePicker fx:id="dpDataFim" prefHeight="37.0" prefWidth="323.0"/>
+                       <Button mnemonicParsing="false" onAction="#list_between" prefHeight="33.0" prefWidth="341.0"
+                               text="LISTAR"/>
+                       <Separator prefHeight="68.0" prefWidth="308.0"/>
+                       <Label fx:id="lbRegPaid" prefHeight="50.0" prefWidth="308.0" text="REGISTROS PAGOS:"/>
+                       <Label fx:id="lbRegPend" prefHeight="50.0" prefWidth="308.0" text="REGISTROS PENDENTES:"/>
+                       <Label fx:id="lbTotalReg" prefHeight="60.0" prefWidth="329.0" text="TOTAL DE REGISTROS:"/>
+                       <Label fx:id="lbDespesasPeriodo" prefHeight="37.0" prefWidth="308.0"
+                              text="DESPESAS PENDENTES: R$ "/>
+                   </VBox>
+               </right>
+               <center>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" BorderPane.alignment="CENTER" />
+               </center>
+                </BorderPane>
+            </AnchorPane>
+        </Tab>
+    </TabPane>
+</AnchorPane>

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="450.0" prefWidth="720.0" stylesheets="@../dark.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controle.admin_controller">
+   <children>
+      <TabPane prefHeight="400.0" prefWidth="720.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Manter Partidas">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="367.0" prefWidth="688">
+                     <children>
+                        <BorderPane prefHeight="380.0" prefWidth="600.0">
+                           <top>
+                              <VBox prefHeight="25.0" prefWidth="600.0">
+                                 <children>
+                                    <MenuBar prefHeight="29.0" prefWidth="587.0">
+                                       <menus>
+                                          <Menu mnemonicParsing="true" text="_Arquivo">
+                                             <items>
+                                                <MenuItem accelerator="Shortcut+Shift+T" mnemonicParsing="true" onAction="#addTorneio" text="Adicionar _Torneio..." />
+                                                <SeparatorMenuItem />
+                                                 <MenuItem accelerator="Shortcut+Shift+P" mnemonicParsing="true" onAction="#actionAdicionaPartida" text="Adicionar _Partida..." />
+                                                 <SeparatorMenuItem />
+                                                 <MenuItem onAction="#actionExit" text="Sair" />
+                                             </items>
+                                          </Menu>
+                                       </menus>
+                                    </MenuBar>
+                                 </children>
+                              </VBox>
+                           </top>
+                            <left>
+                                <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="355.0" prefWidth="236.0" spacing="10">
+                                    <padding>
+                                        <Insets bottom="25" left="25" right="25" top="25" />
+                                    </padding>
+                                    <ListView fx:id="ltvwTorneios" prefHeight="257.0" prefWidth="157.0" />
+                                    <HBox alignment="BOTTOM_RIGHT" prefHeight="23.0" prefWidth="150.0" spacing="10">
+                                        <Label fx:id="txTorneios" prefHeight="34.0" prefWidth="87.0" text="Torneios: " />
+                                        <Button fx:id="btAdd" minHeight="-Infinity" minWidth="-Infinity" onAction="#addTorneio" prefHeight="34.0" prefWidth="30.0">
+                                            <graphic>
+                                                <ImageView fitHeight="18.0" fitWidth="18.0">
+                                                    <Image url="@../Imagens/add.png" />
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="btDel" onAction="#actionDeleteTorneio" prefHeight="30.0" prefWidth="30.0">
+                                            <graphic>
+                                                <ImageView fitHeight="14.0" fitWidth="13.0">
+                                                    <Image url="@../Imagens/delete.png" />
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                    </HBox>
+                                </VBox>
+                            </left>
+                           <right>
+                              <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="355.0" prefWidth="288.0" spacing="10">
+                                 <padding>
+                                    <Insets bottom="25" left="25" right="25" top="25" />
+                                 </padding>
+                                 <children>
+                                    <Label text="Título:" />
+                                    <TextField fx:id="tfTitulo" editable="false" prefHeight="37.0" prefWidth="221.0" />
+                                    <Label fx:id="txData" text="Data da Partida: " />
+                                    <Label alignment="CENTER" prefHeight="16.0" prefWidth="250.0" text="Resultado:" />
+                                    <HBox prefHeight="12.0" prefWidth="251.0">
+                                       <children>
+                                          <TextField fx:id="tfResult1" alignment="CENTER" text="0" />
+                                          <Text text="x" textAlignment="CENTER" wrappingWidth="11.11279296875" />
+                                          <TextField fx:id="tfResult2" alignment="CENTER" text="0" />
+                                       </children>
+                                    </HBox>
+                                    <Label fx:id="lbResult" alignment="CENTER" prefHeight="17.0" prefWidth="323.0" textOverrun="CLIP">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox prefHeight="56.0" prefWidth="163.0">
+                                       <children>
+                                          <Button fx:id="btAtualiza" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#setResult" prefHeight="33.0" prefWidth="242.0" text="Atualzar " textAlignment="CENTER">
+                                             <graphic>
+                                                <ImageView fitHeight="18.0" fitWidth="18.0">
+                                                   <image>
+                                                      <Image url="@../Imagens/update.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </right>
+                           <center>
+                              <VBox fx:id="vbPartidas" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="311.0" prefWidth="199.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <ListView fx:id="ltvwPartida" prefHeight="292.0" prefWidth="203.0"/>
+                                    <HBox prefHeight="39.0" prefWidth="222.0">
+                                       <children>
+                                              <Label fx:id="contadorP" text="Partidas: " />
+                                          <Button minHeight="-Infinity" minWidth="-Infinity" onAction="#actionAdicionaPartida" prefHeight="34.0" prefWidth="30.0">
+                                             <graphic>
+                                                <ImageView fitHeight="18.0" fitWidth="18.0">
+                                                   <image>
+                                                      <Image url="@../Imagens/add.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button onAction="#actionDeletePartida" prefHeight="30.0" prefWidth="30.0">
+                                             <graphic>
+                                                <ImageView fitHeight="14.0" fitWidth="13.0">
+                                                   <image>
+                                                      <Image url="@../Imagens/delete.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children></VBox>
+                           </center>
+                        </BorderPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Manter Usuários">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="367.0" prefWidth="705.0">
+                     <children>
+                        <BorderPane prefHeight="400.0" prefWidth="600.0">
+                           <left>
+                              <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="351.0" prefWidth="293.0" spacing="10">
+                                 <padding>
+                                    <Insets bottom="25" left="25" right="25" top="25" />
+                                 </padding>
+                                 <children>
+                                    <ListView fx:id="ltvwUser" onMouseClicked="#actionShowUserDetails" prefHeight="297.0" prefWidth="248.0" />
+                                    <HBox alignment="BOTTOM_RIGHT" prefHeight="43.0" prefWidth="248.0" spacing="10">
+                                       <children>
+                                          <Label fx:id="contadorU" text="Usuários: " />
+                                          <Button minHeight="-Infinity" minWidth="-Infinity" onAction="#actionAdicionaJogador">
+                                             <graphic>
+                                                <ImageView fitHeight="18.0" fitWidth="18.0">
+                                                   <image>
+                                                      <Image url="@../Imagens/add.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button onAction="#actionDeleteJogador">
+                                             <graphic>
+                                                <ImageView fitHeight="18.0" fitWidth="18.0">
+                                                   <image>
+                                                      <Image url="@../Imagens/delete.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </left>
+                           <right>
+                              <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="355.0" prefWidth="427.0" spacing="10">
+                                 <padding>
+                                    <Insets bottom="25" left="25" right="25" top="25" />
+                                 </padding>
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="337.0">
+                                       <children>
+                                          <VBox prefHeight="100.0" prefWidth="287.0">
+                                             <children>
+                                                <HBox prefHeight="26.0" prefWidth="251.0">
+                                                   <children>
+                                                      <Label prefHeight="26.0" prefWidth="70.0" text="Nome: " />
+                                                      <TextField fx:id="tfNome" prefHeight="26.0" prefWidth="195.0" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="27.0" prefWidth="251.0">
+                                                   <children>
+                                                      <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="24.0" prefWidth="70.0" text="Login:" />
+                                                      <TextField fx:id="tfUsuario" prefHeight="26.0" prefWidth="195.0" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="12.0" prefWidth="251.0">
+                                                   <children>
+                                                      <Label prefHeight="25.0" prefWidth="70.0" text="Senha: " />
+                                                      <TextField fx:id="tfSenha" prefHeight="26.0" prefWidth="195.0" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <ImageView fitHeight="84.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true">
+                                              <Image url="@../Imagens/users.png" />
+                                          </ImageView>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="38.0" prefWidth="351.0">
+                                       <children>
+                                          <Button alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onMouseClicked="#actionUpdateUsers" prefHeight="44.0" prefWidth="351.0" text="Atualizar " textAlignment="RIGHT">
+                                             <graphic>
+                                                <ImageView fitHeight="18.0" fitWidth="18.0">
+                                                   <image>
+                                                      <Image url="@../Imagens/update.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </right>
+                           <top>
+                              <HBox prefHeight="26.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <MenuBar prefHeight="34.0" prefWidth="720.0">
+                                      <menus>
+                                        <Menu mnemonicParsing="true" text="_Jogador">
+                                          <items>
+                                            <MenuItem accelerator="Shortcut+Shift+J" mnemonicParsing="true" onAction="#actionAdicionaJogador" text="_Adicionar..." />
+                                          </items>
+                                        </Menu>
+                                      </menus>
+                                    </MenuBar>
+                                 </children>
+                              </HBox>
+                           </top>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <ToolBar layoutX="-1.0" layoutY="396.0" prefHeight="54.0" prefWidth="720.0">
+         <items>
+            <Button alignment="BOTTOM_LEFT" onAction="#actionExit" prefHeight="33.0" prefWidth="100.0" text="Logout" />
+         </items>
+      </ToolBar>
+   </children>
+</AnchorPane>

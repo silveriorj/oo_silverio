@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.text.Font?>
+
+<DialogPane expanded="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="186.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+   <content>
+      <JFXTextArea editable="false" prefHeight="153.0" prefWidth="360.0" text="Você está prestes a excluir um cadastro.&#10;Fazendo isso você exluirá também as Ordens de Serviço vinculadas ao cadastro.&#10;&#10;Deseja proseguir?">
+         <font>
+            <Font name="Alef Regular" size="16.0" />
+         </font>
+      </JFXTextArea>
+   </content>
+</DialogPane>

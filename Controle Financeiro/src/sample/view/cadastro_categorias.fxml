@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<DialogPane prefHeight="228.0" prefWidth="302.0" stylesheets="@../style/dark.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.control.funcoes_geral">
+   <header>
+       <GridPane hgap="10" prefHeight="208.0" prefWidth="286.0" vgap="10">
+           <columnConstraints>
+               <ColumnConstraints maxWidth="98.0" minWidth="36.0" prefWidth="36.0"/>
+               <ColumnConstraints maxWidth="228.0" minWidth="166.0" prefWidth="228.0"/>
+           </columnConstraints>
+           <Label alignment="CENTER" prefHeight="21.0" prefWidth="236.0" text="CATEGORIA" GridPane.columnIndex="1"
+                  GridPane.rowIndex="6"/>
+           <ComboBox fx:id="cbCategory" promptText="Categoria..." prefHeight="25.0" prefWidth="231.0" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+           <Label alignment="CENTER" prefHeight="21.0" prefWidth="234.0" text="SUB-CATEGORIA" GridPane.columnIndex="1"
+                  GridPane.rowIndex="8"/>
+           <TextField fx:id="tfTitulo" prefHeight="37.0" prefWidth="190.0" GridPane.columnIndex="1" GridPane.rowIndex="9"/>
+       </GridPane>
+   </header>
+</DialogPane>

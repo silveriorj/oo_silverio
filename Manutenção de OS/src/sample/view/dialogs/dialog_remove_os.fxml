@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.text.Font?>
+
+<DialogPane expanded="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="203.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <content>
+        <JFXTextArea editable="false" prefHeight="175.0" prefWidth="360.0" text="Você está prestes a excluir uma Ordem de Serviço.&#10;Fazendo isso não será possível recuperar os dados removidos.&#10;&#10;Deseja proseguir?">
+            <font>
+                <Font name="Alef Regular" size="16.0" />
+            </font>
+        </JFXTextArea>
+    </content>
+</DialogPane>
